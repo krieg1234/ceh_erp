@@ -32,6 +32,21 @@ const tasks = handleActions(
         ...state,
       };
     },
+    [actions.sortTaskList]: (state, { payload }) => {
+      const { field } = payload;
+      const sortedTaskList = state.allTasks.sort((id1, id2) => {
+        const atr1 = state.byId[id1][field];
+        const atr2 = state.byId[id2][field];
+
+        if (atr1 > atr2) return 1;
+        if (atr1 < atr2) return -1;
+        if (atr1 == atr2) return 0;
+      });
+      return {
+        ...state,
+        allTasks: sortedTaskList,
+      };
+    },
   },
   defaultTasks
 );

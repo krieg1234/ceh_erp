@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Table } from 'react-bootstrap';
-import { callEditTaskForm, switchTaskForm } from '../actions/actions';
+import { Table } from 'react-bootstrap';
+import {
+  callEditTaskForm,
+  sortTaskList,
+  switchTaskForm,
+} from '../actions/actions';
+import sortIcon from '../resources/caret-bottom.svg';
 
 const mapStateToProps = (state) => {
   const props = {
@@ -18,23 +23,52 @@ class TaskList extends React.Component {
     dispatch(callEditTaskForm(this.props.tasks.byId[id]));
   };
 
+  sortTaskListHandler = (field) => () => {
+    const { dispatch } = this.props;
+    dispatch(sortTaskList({ field }));
+  };
+
   render() {
     const { byId, allTasks } = this.props.tasks;
-    //const { tasks } = this.props;
     return (
       <Table bordered hover variant="dark">
         <thead>
           <tr>
-            <th>id</th>
-            <th>Шифр</th>
-            <th>Заказ</th>
-            <th>Основание</th>
-            <th>Тип</th>
-            <th>Мастер</th>
-            <th>Дата запуска</th>
-            <th>Дата сдачи</th>
+            <th>
+              id
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('blueprint')}>
+              Шифр
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('order')}>
+              Заказ
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('basisOfOrder')}>
+              Основание
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('type')}>
+              Тип
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('master')}>
+              Мастер
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('launchDate')}>
+              Дата запуска
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
+            <th onClick={this.sortTaskListHandler('completionDate')}>
+              Дата сдачи
+              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+            </th>
           </tr>
         </thead>
+
         <tbody>
           {allTasks.map((taskId) => {
             const {
