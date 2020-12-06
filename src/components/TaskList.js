@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import { callEditTaskForm, switchTaskForm } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   const props = {
@@ -10,14 +11,21 @@ const mapStateToProps = (state) => {
 };
 
 class TaskList extends React.Component {
-  state = {};
+  editTaskHandler = (e) => {
+    const { dispatch } = this.props;
+    const id = e.currentTarget.cells[0].innerText;
+    dispatch(switchTaskForm());
+    dispatch(callEditTaskForm(this.props.tasks.byId[id]));
+  };
+
   render() {
-    const { tasks } = this.props;
+    const { byId, allTasks } = this.props.tasks;
+    //const { tasks } = this.props;
     return (
-      <Table>
+      <Table bordered hover variant="dark">
         <thead>
           <tr>
-            <th>#</th>
+            <th>id</th>
             <th>Шифр</th>
             <th>Заказ</th>
             <th>Основание</th>
@@ -27,7 +35,33 @@ class TaskList extends React.Component {
             <th>Дата сдачи</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {allTasks.map((taskId) => {
+            const {
+              id,
+              blueprint,
+              order,
+              basisOfOrder,
+              type,
+              master,
+              launchDate,
+              completionDate,
+            } = byId[taskId].getData();
+            console.log(byId[taskId].getData());
+            return (
+              <tr key={id} onClick={this.editTaskHandler}>
+                <td>{id}</td>
+                <td>{blueprint}</td>
+                <td>{order}</td>
+                <td>{basisOfOrder}</td>
+                <td>{type}</td>
+                <td>{master}</td>
+                <td>{launchDate}</td>
+                <td>{completionDate}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </Table>
     );
   }

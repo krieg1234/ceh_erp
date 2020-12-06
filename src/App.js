@@ -3,7 +3,7 @@ import './App.css';
 import CreateTaskForm from './components/CreateTaskForm';
 import TaskList from './components/TaskList.js';
 import React, { Component } from 'react';
-import { switchCreateTaskForm } from './actions/actions';
+import { callCreateTaskForm, switchTaskForm } from './actions/actions';
 import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
   const props = {};
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 class App extends Component {
   callAddTaskFormHandler = () => {
     const { dispatch } = this.props;
-    dispatch(switchCreateTaskForm());
+    dispatch(callCreateTaskForm());
+    dispatch(switchTaskForm());
   };
   render() {
     return (
