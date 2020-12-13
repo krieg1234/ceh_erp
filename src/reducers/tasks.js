@@ -40,11 +40,17 @@ const tasks = handleActions(
 
         if (atr1 > atr2) return 1;
         if (atr1 < atr2) return -1;
-        if (atr1 == atr2) return 0;
+        return 0;
       });
       return {
         ...state,
         allTasks: sortedTaskList,
+      };
+    },
+    [actions.downloadTaskListSuccess]: (state, { payload }) => {
+      return {
+        byId: payload.byId,
+        allTasks: payload.allTasks,
       };
     },
   },

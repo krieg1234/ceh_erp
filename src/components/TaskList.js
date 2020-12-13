@@ -38,33 +38,48 @@ class TaskList extends React.Component {
               id
               <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
             </th>
-            <th onClick={this.sortTaskListHandler('blueprint')}>
+            <th>
               Шифр
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img
+                src={sortIcon}
+                onClick={this.sortTaskListHandler('blueprint')}
+              />
             </th>
-            <th onClick={this.sortTaskListHandler('order')}>
+            <th>
               Заказ
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img src={sortIcon} onClick={this.sortTaskListHandler('order')} />
             </th>
-            <th onClick={this.sortTaskListHandler('basisOfOrder')}>
+            <th>
               Основание
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img
+                src={sortIcon}
+                onClick={this.sortTaskListHandler('basisOfOrder')}
+              />
             </th>
-            <th onClick={this.sortTaskListHandler('type')}>
+            <th>
               Тип
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img src={sortIcon} onClick={this.sortTaskListHandler('type')} />
             </th>
-            <th onClick={this.sortTaskListHandler('master')}>
+            <th>
               Мастер
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img
+                src={sortIcon}
+                onClick={this.sortTaskListHandler('master')}
+              />
             </th>
-            <th onClick={this.sortTaskListHandler('launchDate')}>
+            <th>
               Дата запуска
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img
+                src={sortIcon}
+                onClick={this.sortTaskListHandler('launchDate')}
+              />
             </th>
-            <th onClick={this.sortTaskListHandler('completionDate')}>
+            <th>
               Дата сдачи
-              <img src={sortIcon} onClick={this.sortTaskListHandler('id')} />
+              <img
+                src={sortIcon}
+                onClick={this.sortTaskListHandler('completionDate')}
+              />
             </th>
           </tr>
         </thead>
@@ -81,7 +96,6 @@ class TaskList extends React.Component {
               launchDate,
               completionDate,
             } = byId[taskId].getData();
-            console.log(byId[taskId].getData());
             return (
               <tr key={id} onClick={this.editTaskHandler}>
                 <td>{id}</td>

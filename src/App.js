@@ -3,10 +3,17 @@ import './App.css';
 import CreateTaskForm from './components/CreateTaskForm';
 import TaskList from './components/TaskList.js';
 import React, { Component } from 'react';
-import { callCreateTaskForm, switchTaskForm } from './actions/actions';
+import {
+  callCreateTaskForm,
+  switchTaskForm,
+  downloadTaskList,
+} from './actions/actions';
 import { connect } from 'react-redux';
+
 const mapStateToProps = (state) => {
-  const props = {};
+  const props = {
+    tasks: state.tasks.byId,
+  };
   return props;
 };
 
@@ -16,6 +23,12 @@ class App extends Component {
     dispatch(callCreateTaskForm());
     dispatch(switchTaskForm());
   };
+
+  componentDidMount = () => {
+    const { dispatch } = this.props;
+    dispatch(downloadTaskList);
+  };
+
   render() {
     return (
       <Container className="App">

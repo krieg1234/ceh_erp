@@ -25,7 +25,6 @@ export class Task {
   }
 
   getData() {
-    console.log('ID: ' + this.id);
     return {
       id: this.id,
       blueprint: this.blueprint,

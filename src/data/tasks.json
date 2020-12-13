@@ -1,0 +1,102 @@
+{
+  "1": {
+    "id": "1",
+    "blueprint": "6307-7777",
+    "order": "230511804",
+    "basisOfOrder": "план 02/21",
+    "type": "новый",
+    "launchDate": "13.08.2019",
+    "completionDate": "",
+    "master": "5"
+  },
+  "2": {
+    "id": "2",
+    "blueprint": "6380-1293",
+    "order": "230511804",
+    "basisOfOrder": "с.з.",
+    "type": "ремонт",
+    "launchDate": "11.12.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "3": {
+    "id": "3",
+    "blueprint": "6380-1294",
+    "order": "230012000",
+    "basisOfOrder": "план 02/21",
+    "type": "новый",
+    "launchDate": "19.12.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "4": {
+    "id": "4",
+    "blueprint": "6307-7777",
+    "order": "230012000",
+    "basisOfOrder": "с.з.",
+    "type": "ремонт",
+    "launchDate": "11.11.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "5": {
+    "id": "5",
+    "blueprint": "6009-1102",
+    "order": "200052000",
+    "basisOfOrder": "план 02/21",
+    "type": "дублёр",
+    "launchDate": "05.09.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "6": {
+    "id": "6",
+    "blueprint": "6009-1001",
+    "order": "230012000",
+    "basisOfOrder": "с.з.",
+    "type": "доработка",
+    "launchDate": "03.02.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "7": {
+    "id": "7",
+    "blueprint": "6512-1389",
+    "order": "200052000",
+    "basisOfOrder": "план 02/21",
+    "type": "новый",
+    "launchDate": "09.11.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "8": {
+    "id": "8",
+    "blueprint": "6380-1204",
+    "order": "230012000",
+    "basisOfOrder": "изв.3548",
+    "type": "доработка",
+    "launchDate": "22.01.2021",
+    "completionDate": "",
+    "master": "5"
+  },
+  "9": {
+    "id": "9",
+    "blueprint": "6360-1111",
+    "order": "250511703",
+    "basisOfOrder": "изв.1158",
+    "type": "доработка",
+    "launchDate": "13.12.2020",
+    "completionDate": "",
+    "master": "5"
+  },
+  "10": {
+    "id": "10",
+    "blueprint": "6354-1083",
+    "order": "230012000",
+    "basisOfOrder": "план 02/21",
+    "type": "дублёр",
+    "launchDate": "13.12.2020",
+    "completionDate": "",
+    "master": "5"
+  }
+}
